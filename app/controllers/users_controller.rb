@@ -13,6 +13,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @status_updates = @user.status_updates
+    @status_update = StatusUpdate.new
+  end
+
+
+
   private
 
   def user_params
