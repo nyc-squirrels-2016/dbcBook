@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160301152919) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "email",           null: false
     t.string   "name",            null: false
     t.text     "about"
     t.string   "img_url"
