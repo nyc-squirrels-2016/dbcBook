@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  resource :sessions, only: [:create]
   resource :users, only: [:create]
 
   get '/' => 'index#show'
