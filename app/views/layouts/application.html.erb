@@ -8,6 +8,11 @@
 </head>
 <body>
   <h1>DBCbook</h1>
+  <%if logged_in?%>
+  <%= link_to "Profile", "/users/#{current_user.id}" %> |
+  <%= link_to "Feed", status_updates_path%> |
+  <%= link_to "Home", "/"%>
+  <%end%>
 
 <%= yield %>
 
