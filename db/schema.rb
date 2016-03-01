@@ -16,6 +16,13 @@ ActiveRecord::Schema.define(version: 20160301152919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comment_likes", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "comment_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "comments", force: true do |t|
     t.integer  "status_update_id", null: false
     t.integer  "user_id",          null: false
@@ -24,17 +31,17 @@ ActiveRecord::Schema.define(version: 20160301152919) do
     t.datetime "updated_at",       null: false
   end
 
-  create_table "comments_likes", force: true do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "comment_id", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "friends", force: true do |t|
     t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "status_update_likes", force: true do |t|
+    t.integer  "user_id",          null: false
+    t.integer  "status_update_id", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "status_updates", force: true do |t|
@@ -42,13 +49,6 @@ ActiveRecord::Schema.define(version: 20160301152919) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "status_updates_likes", force: true do |t|
-    t.integer  "user_id",          null: false
-    t.integer  "status_update_id", null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: true do |t|
