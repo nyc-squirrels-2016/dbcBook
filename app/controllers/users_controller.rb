@@ -24,6 +24,10 @@ class UsersController < ApplicationController
     @status_update = StatusUpdate.new
   end
 
+  def image_update
+    current_user.update(img_url: params[:img_url])
+    redirect_to '/'
+  end
 
 
   private
