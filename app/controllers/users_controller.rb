@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @status_updates = @user.status_updates
+    @status_updates = @user.status_updates.order(:created_at).reverse
     @status_update = StatusUpdate.new
   end
 
