@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  resource :sessions, only: [:create]
+  resource :sessions, only: [:create, :show]
   resource :users, only: [:create]
+  resources :status_updates, only: [:index, :create]
 
   get '/' => 'index#show'
   get 'register' => 'users#new'
