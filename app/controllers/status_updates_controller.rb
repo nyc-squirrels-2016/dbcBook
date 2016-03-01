@@ -1,6 +1,7 @@
 class StatusUpdatesController < ApplicationController
 
   def index
+    @status_update = StatusUpdate.new
     @status_updates = StatusUpdate.order(:created_at).reverse
   end
 
