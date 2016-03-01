@@ -1,4 +1,5 @@
 <p><%=link_to user.name, "/users/#{user.id}" %>
 <%=form_for @friend do |f| %>
+  <%= f.hidden_field :friend_id, :value => user.id %>
   <%=f.submit "Add friend" %>
 <%end%>
