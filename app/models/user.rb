@@ -22,3 +22,7 @@ class User < ActiveRecord::Base
   # end
 
 end
+
+
+
+#Try to integrate this stuff at some point: https://www.railstutorial.org/book/following_users
