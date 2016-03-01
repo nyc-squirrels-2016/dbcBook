@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   resource :sessions, only: [:create, :show]
   resources :users, only: [:create, :show]
   resources :status_updates, only: [:index, :create]
+  resources :friends, only: [:create]
 
   get '/' => 'index#show'
   get 'register' => 'users#new'
   get 'logout' => 'sessions#destroy'
   get 'login' => 'sessions#new'
-
+  get 'friends' => 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

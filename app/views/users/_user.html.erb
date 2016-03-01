@@ -1,0 +1,4 @@
+<p><%=link_to user.name, "/users/#{user.id}" %>
+<%=form_for @friend do |f| %>
+  <%=f.submit "Add friend" %>
+<%end%>

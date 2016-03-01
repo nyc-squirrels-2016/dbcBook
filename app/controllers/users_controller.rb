@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
+    @friend = Friend.new
   end
 
   def show
