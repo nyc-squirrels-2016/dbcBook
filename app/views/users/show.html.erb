@@ -1,0 +1,9 @@
+<h3><%=@user.name%></h3>
+<p><%=@user.about%></p>
+<img src="<%=@user.img_url%>">
+<%if current_user.id == @user.id%>
+<%= render partial: "/status_updates/status_update_form", locals: {status_update: @status_update}%>
+<%= render partial: "/users/image_update_form"%>
+<%end%>
+<h4><%=@user.name%>'s Status Updates:</h4>
+<%=render @status_updates %>

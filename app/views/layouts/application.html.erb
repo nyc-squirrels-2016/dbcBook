@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1>DBCbook</h1>
+  <%if logged_in?%>
+  <%= link_to "Home", "/"%> |
+  <%= link_to "Profile", "/users/#{current_user.id}" %> |
+  <%= link_to "Feed", status_updates_path%> |
+  <%= link_to "Find friends", users_path %>
+  <%end%>
 
 <%= yield %>
 

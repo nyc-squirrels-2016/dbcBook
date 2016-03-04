@@ -1,0 +1,4 @@
+<h4>Hey <%=current_user.name%>, what's on your mind?</h4>
+<%= render partial: "/status_updates/status_update_form", locals: {status_update: @status_update}%>
+
+<%= render @status_updates %>
